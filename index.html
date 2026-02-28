@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO META TAGS ===== -->
+  <meta name="description" content="FerLopes – Escritório de Advocacia especializado em Direito Familiar, Empresarial e Sucessório. Mais de 15 anos de excelência jurídica no Brasil." />
+  <meta name="keywords" content="advocacia, direito familiar, direito empresarial, direito sucessório, advogados, holding familiar, direito imobiliário" />
+  <meta name="author" content="FerLopes Advocacia" />
+  <meta name="theme-color" content="#b8922e" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:title" content="FerLopes | Escritório de Advocacia — Excelência Jurídica" />
+  <meta property="og:description" content="Mais de 15 anos de experiência em Direito Familiar, Empresarial e Sucessório. Consulta gratuita disponível." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+
+  <title>FerLopes | Escritório de Advocacia — Excelência Jurídica</title>
+
+  <!-- ===== PRECONNECT (melhora tempo de carregamento das fontes) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- ===== TIPOGRAFIA ===== -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ===== ÍCONES ===== -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- ===== STYLESHEET PRINCIPAL ===== -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!--
+    TEMA: Script inline para aplicar o tema ANTES da renderização.
+    Evita o "flash" de tema incorreto (FOUC — Flash of Unstyled Content).
+    Lê a preferência do localStorage; se não houver, usa prefers-color-scheme.
+  -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('ferlopes-theme');
+      var preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', saved || preferred);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       SITE HEADER
+       Estrutura idêntica em todas as páginas.
+       O JS detecta a página atual e marca o link ativo.
+  ====================================================== -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+
+      <!-- Marca / Logo -->
+      <a href="./index.html" class="brand-logo" aria-label="FerLopes Advocacia — Página Inicial">
+        <i class="fas fa-balance-scale brand-logo__icon" aria-hidden="true"></i>
+        <span class="brand-logo__text">Fer<span>Lopes</span></span>
+      </a>
+
+      <!-- Navegação principal -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação Principal">
+
+        <!-- Botão fechar no menu mobile -->
+        <button class="nav-close" id="nav-close" aria-label="Fechar menu de navegação">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+
+        <ul class="nav-list" role="list">
+          <!-- aria-current="page" é setado via JS ou hard-coded na página correta -->
+          <li><a href="./index.html#inicio"        class="nav-link" data-page="index">Início</a></li>
+          <li><a href="./index.html#areas-atuacao" class="nav-link" data-page="index">Atuação</a></li>
+          <li><a href="./index.html#depoimentos"   class="nav-link" data-page="index">Depoimentos</a></li>
+          <li><a href="./sobre-nos.html"            class="nav-link" data-page="sobre-nos">Sobre</a></li>
+          <li><a href="./index.html#contato"       class="nav-link" data-page="index">Contato</a></li>
+        </ul>
+
+        <a href="./index.html#contato" class="btn btn-primary" aria-label="Solicitar consulta gratuita">
+          Consulta Gratuita
+        </a>
+
+      </nav>
+
+      <!-- Botão hambúrguer (apenas mobile) -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <!-- Botão Dark/Light Mode -->
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Alternar para modo claro"
+        title="Alternar tema"
+      >
+        <i class="fas fa-sun  icon-sun"  aria-hidden="true"></i>
+        <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+    <!-- Overlay escuro por trás do menu mobile -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  </header>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+  <main id="main-content">
+
+    <!-- ==================
+         HERO
+    =================== -->
+    <section class="hero-section" id="inicio" aria-label="Seção de apresentação">
+      <div class="hero-section__bg" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-content__label">O Melhor Sistema Jurídico</p>
+
+          <!-- h1 único na página – hierarquia correta -->
+          <h1 class="hero-content__title">
+            Bem-vindo ao
+            <em>FerLopes</em>
+            <span>Escritório de Advocacia</span>
+          </h1>
+
+          <p class="hero-content__description">
+            Somos referência nacional em Direito Familiar, Empresarial e Sucessório.
+            Com mais de 20 anos de experiência, você pode confiar na excelência
+            e integridade que protege seus interesses.
+          </p>
+
+          <div class="hero-content__cta">
+            <a href="#contato" class="btn btn-primary">
+              Solicitar Consulta <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="#areas-atuacao" class="btn btn-outline">
+              Nossas Áreas
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicador de scroll animado -->
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+
+    <!-- ==================
+         FEATURES STRIP
+    =================== -->
+    <section class="features-strip" aria-label="Diferenciais do escritório">
+      <div class="container">
+        <div class="features-strip__grid" role="list">
+
+          <article class="feature-card" role="listitem" data-reveal>
+            <div class="feature-card__icon" aria-hidden="true">
+              <i class="far fa-comments"></i>
+            </div>
+            <h3 class="feature-card__title">Consulta Gratuita</h3>
+            <span class="feature-card__rule" aria-hidden="true"></span>
+            <p class="feature-card__text">
+              Nossos advogados lhe darão aconselhamento jurídico especializado sem custo inicial.
+            </p>
+          </article>
+
+          <article class="feature-card feature-card--highlight" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="feature-card__icon" aria-hidden="true">
+              <i class="fas fa-gavel"></i>
+            </div>
+            <h3 class="feature-card__title">Advogado Pessoal</h3>
+            <span class="feature-card__rule" aria-hidden="true"></span>
+            <p class="feature-card__text">
+              Profissional qualificado e dedicado exclusivamente ao seu caso e interesses.
+            </p>
+          </article>
+
+          <article class="feature-card" role="listitem" data-reveal data-reveal-delay="3">
+            <div class="feature-card__icon" aria-hidden="true">
+              <i class="far fa-lightbulb"></i>
+            </div>
+            <h3 class="feature-card__title">Conselhos de Especialistas</h3>
+            <span class="feature-card__rule" aria-hidden="true"></span>
+            <p class="feature-card__text">
+              Estratégia jurídica sólida para tomar as decisões mais assertivas.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================
+         ABOUT / BEM-VINDO
+    =================== -->
+    <section class="about-section" id="sobre" aria-labelledby="about-heading">
+      <div class="container about-section__inner">
+
+        <!-- Coluna de texto -->
+        <div class="about-section__text">
+          <p class="section-label" data-reveal>Bem-vindo</p>
+          <h2 class="section-heading" id="about-heading" data-reveal data-reveal-delay="1">
+            FerLopes <em>Escritório de Advocacia</em>
+          </h2>
+          <span class="section-rule" data-reveal data-reveal-delay="2" aria-hidden="true"></span>
+
+          <blockquote class="about-section__highlight" data-reveal data-reveal-delay="2">
+            Ao cooperar com especialistas em todo o Brasil, nosso escritório é líder
+            no fornecimento de serviços jurídicos de qualidade excepcional.
+          </blockquote>
+
+          <p class="about-section__body" data-reveal data-reveal-delay="3">
+            Fundado há mais de 15 anos, atuamos em diversas áreas jurídicas com excelência.
+            Hoje somos referência nacional em Direito Imobiliário, constituição de
+            Holding Familiar, Direito de Família e Direito Sucessório.
+          </p>
+
+          <p class="about-section__body" data-reveal data-reveal-delay="3">
+            Nossa equipe busca atender com agilidade, transparência e competência.
+            Inspirados nos mais elevados princípios éticos e na vasta experiência
+            de nossos sócios, percorremos o caminho da excelência há mais de uma década.
+          </p>
+
+          <!-- Estatísticas numéricas -->
+          <div class="stats-row" data-reveal data-reveal-delay="4" aria-label="Números do escritório">
+            <div class="stat-item">
+              <span class="stat-item__number">15+</span>
+              <span class="stat-item__label">Anos de Experiência</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-item__number">500+</span>
+              <span class="stat-item__label">Casos Bem-Sucedidos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-item__number">98%</span>
+              <span class="stat-item__label">Clientes Satisfeitos</span>
+            </div>
+          </div>
+
+          <div class="about-section__cta" data-reveal data-reveal-delay="4">
+            <a href="./sobre-nos.html" class="btn btn-primary">
+              Saiba Mais <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna visual -->
+        <div class="about-section__visual" data-reveal data-reveal-delay="1">
+          <div class="about-image-frame">
+            <img
+              src="./assets/img/cio2.png"
+              alt="Dr. João Carlos Silva, Sócio Fundador da FerLopes Advocacia"
+              class="about-image-frame__img"
+              loading="lazy"
+              width="480"
+              height="640"
+            />
+            <div class="signature-badge">
+              <p class="signature-badge__name">Dr. João Carlos Silva</p>
+              <p class="signature-badge__role">Sócio Fundador</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================
+         SERVICES / ÁREAS
+    =================== -->
+    <section class="services-section" id="areas-atuacao" aria-labelledby="services-heading">
+      <div class="container">
+
+        <header class="services-section__header">
+          <p class="section-label" data-reveal>Nossos Serviços</p>
+          <h2 class="section-heading" id="services-heading" data-reveal data-reveal-delay="1">
+            Áreas de <em>Atuação</em>
+          </h2>
+          <span class="section-rule" data-reveal data-reveal-delay="2" aria-hidden="true"></span>
+        </header>
+
+        <!-- role="list" restaura semântica de lista removida pelo CSS reset -->
+        <div class="services-grid" role="list">
+
+          <article class="service-card" role="listitem" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="service-card__title">Seguros</h3>
+            <p class="service-card__description">
+              Consultoria em seguros e assistência especializada em casos de acidentes e sinistros.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <h3 class="service-card__title">Banco &amp; Financeiro</h3>
+            <p class="service-card__description">
+              Prevenção e combate a fraudes bancárias e financeiras com atuação estratégica.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3 class="service-card__title">Direito Imobiliário</h3>
+            <p class="service-card__description">
+              Especialistas em transações, contratos e disputas imobiliárias de alta complexidade.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3 class="service-card__title">Direito Empresarial</h3>
+            <p class="service-card__description">
+              Assessoria jurídica completa para empresas: contratos, societário e compliance.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="service-card__title">Direito de Família</h3>
+            <p class="service-card__description">
+              Soluções humanizadas em divórcio, guarda, pensão alimentícia e adoção.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem" data-reveal data-reveal-delay="3">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-balance-scale-right"></i>
+            </div>
+            <h3 class="service-card__title">Direito Civil</h3>
+            <p class="service-card__description">
+              Defesa e consultoria estratégica em questões civis com alto índice de êxito.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================
+         TESTIMONIALS
+    =================== -->
+    <section class="testimonials-section" id="depoimentos" aria-labelledby="testimonials-heading">
+      <div class="container">
+
+        <header class="testimonials-section__header">
+          <p class="section-label" data-reveal>Depoimentos</p>
+          <h2 class="section-heading" id="testimonials-heading" data-reveal data-reveal-delay="1">
+            O Que Dizem Nossos <em>Clientes</em>
+          </h2>
+          <span class="section-rule" data-reveal data-reveal-delay="2" aria-hidden="true"></span>
+        </header>
+
+        <div class="testimonials-grid" role="list">
+
+          <article class="testimonial-card" role="listitem" data-reveal>
+            <img
+              src="./assets/img/testimonials01.jpg"
+              alt="Foto de Ricardo Delvarus"
+              class="testimonial-card__avatar"
+              loading="lazy"
+              width="56" height="56"
+            />
+            <p class="testimonial-card__quote">
+              Excelente profissional, notadamente no âmbito da temática de licitações
+              públicas. Recomendo fortemente os serviços prestados.
+            </p>
+            <p class="testimonial-card__name">Ricardo Delvarus</p>
+            <p class="testimonial-card__role">Empresário</p>
+          </article>
+
+          <article class="testimonial-card" role="listitem" data-reveal data-reveal-delay="2">
+            <img
+              src="./assets/img/testimonials03.jpg"
+              alt="Foto de Joseph Brooks"
+              class="testimonial-card__avatar"
+              loading="lazy"
+              width="56" height="56"
+            />
+            <p class="testimonial-card__quote">
+              Excelente, desde o atendimento ao acompanhamento!
+              Me senti seguro e acolhido durante todo o processo.
+            </p>
+            <p class="testimonial-card__name">Joseph Brooks</p>
+            <p class="testimonial-card__role">Empresário</p>
+          </article>
+
+          <article class="testimonial-card" role="listitem" data-reveal data-reveal-delay="3">
+            <img
+              src="./assets/img/testimonials02.jpg"
+              alt="Foto de Julia Moura"
+              class="testimonial-card__avatar"
+              loading="lazy"
+              width="56" height="56"
+            />
+            <p class="testimonial-card__quote">
+              Ambiente agradável com profissionais altamente qualificados,
+              humanitários e eficientes. Super recomendo!
+            </p>
+            <p class="testimonial-card__name">Julia Moura</p>
+            <p class="testimonial-card__role">Empresária</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================
+         CONTACT
+    =================== -->
+    <section class="contact-section" id="contato" aria-labelledby="contact-heading">
+
+      <!-- Lado visual com imagem e frase -->
+      <div class="contact-section__visual" role="img" aria-label="Escritório de advocacia FerLopes">
+        <div class="contact-section__visual-overlay">
+          <p class="contact-section__visual-text">
+            Seus direitos merecem<br>
+            <em>a melhor defesa.</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- Lado do formulário -->
+      <div class="contact-section__form-area">
+        <p class="section-label">Solicite um Orçamento</p>
+        <h2 class="section-heading" id="contact-heading">Consulta <em>Gratuita</em></h2>
+        <span class="section-rule" aria-hidden="true"></span>
+
+        <p class="contact-section__description">
+          Não perca tempo. Solicite seu orçamento agora e tenha seus direitos protegidos
+          com agilidade e estratégia. Nosso time está pronto para atender você.
+        </p>
+
+        <!--
+          novalidate: validação controlada pelo JS (feedback inline personalizado).
+          aria-label: identifica o formulário para leitores de tela.
+        -->
+        <form class="contact-form" id="contact-form" novalidate aria-label="Formulário de contato">
+
+          <div class="form-row">
+            <div class="form-group">
+              <!-- label.sr-only: visualmente oculto, presente para acessibilidade -->
+              <label for="contact-name" class="sr-only">Nome completo</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                class="form-input"
+                placeholder="Nome completo"
+                required
+                autocomplete="name"
+                aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact-email" class="sr-only">E-mail</label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                class="form-input"
+                placeholder="E-mail"
+                required
+                autocomplete="email"
+                aria-required="true"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone" class="sr-only">Telefone</label>
+            <input
+              type="tel"
+              id="contact-phone"
+              name="phone"
+              class="form-input"
+              placeholder="Telefone"
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="sr-only">Mensagem</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              class="form-textarea"
+              placeholder="Descreva brevemente sua necessidade jurídica..."
+              rows="5"
+              maxlength="600"
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Enviar Mensagem <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          </button>
+
+          <!-- role="status" + aria-live: leitores de tela anunciam o feedback automaticamente -->
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+        </form>
+      </div>
+
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+
+    <div class="site-footer__top">
+
+      <!-- Coluna sobre o escritório -->
+      <div class="footer-about">
+        <a href="./index.html" class="footer-about__logo" aria-label="FerLopes — Página Inicial">
+          <i class="fas fa-balance-scale" aria-hidden="true"></i>
+          FerLopes
+        </a>
+        <p class="footer-about__tagline">
+          Combinamos experiência e inovação para oferecer o suporte jurídico que você precisa.
+          Atuamos com firmeza e estratégia, sempre focados em proteger seus direitos.
+        </p>
+        <ul class="social-list" aria-label="Redes sociais">
+          <li>
+            <a href="#" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna de publicações recentes -->
+      <div class="footer-posts">
+        <h3 class="footer-posts__title">Publicações Recentes</h3>
+
+        <article class="post-item">
+          <a href="#">
+            <img src="./assets/img/post-1.jpg" alt="Revisão Judicial de Novas Leis em Direito Trabalhista" class="post-item__thumb" loading="lazy" width="64" height="64" />
+          </a>
+          <div>
+            <a href="#"><p class="post-item__title">Revisão Judicial de Novas Leis em Direito Trabalhista</p></a>
+            <div class="post-item__meta">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <time datetime="2024-12-01">01 de Dezembro de 2025</time>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-item">
+          <a href="#">
+            <img src="./assets/img/post-2.jpg" alt="Fale Diretamente com a Seguradora em Caso de Acidentes" class="post-item__thumb" loading="lazy" width="64" height="64" />
+          </a>
+          <div>
+            <a href="#"><p class="post-item__title">Fale Diretamente com a Seguradora em Caso de Acidentes</p></a>
+            <div class="post-item__meta">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <time datetime="2024-11-15">15 de Novembro de 2025</time>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-item">
+          <a href="#">
+            <img src="./assets/img/post-3.jpg" alt="Ouça seus Advogados para os melhores conselhos" class="post-item__thumb" loading="lazy" width="64" height="64" />
+          </a>
+          <div>
+            <a href="#"><p class="post-item__title">Ouça seus Advogados: Eles lhe darão os melhores conselhos</p></a>
+            <div class="post-item__meta">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <time datetime="2024-11-05">05 de Novembro de 2025</time>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div><!-- /site-footer__top -->
+
+    <div class="site-footer__bottom">
+      <div class="footer-bottom-inner">
+        <p class="footer-copyright">
+          &copy; <time id="footer-year"></time> FerLopes Advocacia. Todos os direitos reservados.
+        </p>
+        <p class="footer-copyright">
+          OAB/SP &middot; Direito com Excelência e Integridade
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       SCROLL TO TOP
+  ====================================================== -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Voltar ao topo da página">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ===== JAVASCRIPT (defer garante execução após o DOM) ===== -->
+  <script src="./assets/js/main.js" defer></script>
+
+</body>
+</html>

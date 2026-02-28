@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO META TAGS ===== -->
+  <meta name="description" content="Conheça a equipe e a história do FerLopes – Escritório de Advocacia com mais de 15 anos de experiência e excelência jurídica no Brasil." />
+  <meta name="keywords" content="advocacia, equipe, advogados especializados, história, FerLopes, sobre nós" />
+  <meta name="author" content="FerLopes Advocacia" />
+  <meta name="theme-color" content="#b8922e" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:title" content="Sobre Nós | FerLopes Advocacia" />
+  <meta property="og:description" content="Conheça os profissionais que fazem do FerLopes uma referência em advocacia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+
+  <title>Sobre Nós | FerLopes Advocacia</title>
+
+  <!-- ===== PRECONNECT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- ===== TIPOGRAFIA ===== -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ===== ÍCONES ===== -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- ===== STYLESHEET PRINCIPAL (mesmo arquivo do index) ===== -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!--
+    TEMA: Script inline para aplicar o tema ANTES da renderização.
+    Evita o "flash" de tema incorreto (FOUC — Flash of Unstyled Content).
+  -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('ferlopes-theme');
+      var preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', saved || preferred);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       SITE HEADER
+       Estrutura IDÊNTICA ao index.html.
+       O JS detecta a URL atual e marca o link "Sobre Nós"
+       com aria-current="page" e classe .active.
+  ====================================================== -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+
+      <!-- Marca / Logo — aponta para index.html -->
+      <a href="./index.html" class="brand-logo" aria-label="FerLopes Advocacia — Página Inicial">
+        <i class="fas fa-balance-scale brand-logo__icon" aria-hidden="true"></i>
+        <span class="brand-logo__text">Fer<span>Lopes</span></span>
+      </a>
+
+      <!-- Navegação principal -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação Principal">
+
+        <button class="nav-close" id="nav-close" aria-label="Fechar menu de navegação">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+
+        <ul class="nav-list" role="list">
+          <li><a href="./index.html#inicio"        class="nav-link" data-page="index">Início</a></li>
+          <li><a href="./index.html#areas-atuacao" class="nav-link" data-page="index">Áreas de Atuação</a></li>
+          <li><a href="./index.html#depoimentos"   class="nav-link" data-page="index">Depoimentos</a></li>
+          <!--
+            Link da página atual: aria-current="page" informa tecnologias assistivas.
+            A classe .active é adicionada via JS automaticamente, mas está hard-coded
+            aqui como fallback caso o JS não carregue.
+          -->
+          <li>
+            <a
+              href="./sobre-nos.html"
+              class="nav-link active"
+              data-page="sobre-nos"
+              aria-current="page"
+            >Sobre Nós</a>
+          </li>
+          <li><a href="./index.html#contato" class="nav-link" data-page="index">Contato</a></li>
+        </ul>
+
+        <a href="./index.html#contato" class="btn btn-primary" aria-label="Solicitar consulta gratuita">
+          Consulta Gratuita
+        </a>
+
+      </nav>
+
+      <!-- Botão hambúrguer (apenas mobile) -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <!-- Botão Dark/Light Mode -->
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Alternar para modo claro"
+        title="Alternar tema"
+      >
+        <i class="fas fa-sun  icon-sun"  aria-hidden="true"></i>
+        <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+    <!-- Overlay escuro por trás do menu mobile -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  </header>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+  <main id="main-content">
+
+    <!-- ==================
+         PAGE BANNER
+         Hero compacto para página interna
+    =================== -->
+    <section class="page-banner" aria-label="Cabeçalho da página Sobre Nós">
+      <div class="page-banner__content">
+        <h1 class="page-banner__title" data-reveal>Sobre Nós</h1>
+
+        <!-- Breadcrumb: melhora SEO e orientação do usuário -->
+        <nav class="breadcrumb" aria-label="Caminho de navegação" data-reveal data-reveal-delay="1">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item">
+              <a href="./index.html" class="breadcrumb__link">Início</a>
+            </li>
+            <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">
+              Sobre Nós
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+
+    <!-- ==================
+         NOSSA HISTÓRIA
+    =================== -->
+    <section class="history-section" id="historia" aria-labelledby="history-heading">
+      <div class="history-section__inner">
+        <div class="history-section__content" data-reveal>
+
+          <p class="section-label">Nossa História</p>
+          <h2 class="section-heading" id="history-heading">
+            FerLopes <em>Escritório de Advocacia</em>
+          </h2>
+          <span class="section-rule" aria-hidden="true"></span>
+
+          <p class="history-section__text">
+            Fundado em 2008, o <strong>FerLopes Escritório de Advocacia</strong> nasceu
+            da visão de um grupo de advogados comprometidos em oferecer serviços jurídicos
+            de excelência, pautados pela ética, transparência e dedicação aos interesses
+            dos nossos clientes.
+          </p>
+
+          <p class="history-section__text">
+            Ao longo de mais de <strong>15 anos de atuação</strong>, consolidamos nossa
+            posição como referência nacional em Direito Imobiliário, Constituição de
+            Holdings Familiares, Direito de Família e Direito Sucessório. Nossa trajetória
+            é marcada por casos de sucesso e pela confiança de centenas de clientes em todo o Brasil.
+          </p>
+
+          <p class="history-section__text">
+            Nosso escritório reúne uma equipe multidisciplinar de advogados especializados,
+            que combinam sólida formação acadêmica com vasta experiência prática. Acreditamos
+            que cada caso é único e merece atenção personalizada e acompanhamento próximo.
+          </p>
+
+          <!-- Grid de valores do escritório -->
+          <ul class="values-grid" role="list" aria-label="Valores do escritório">
+
+            <li class="value-card" data-reveal>
+              <div class="value-card__icon" aria-hidden="true">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="value-card__title">Ética</h3>
+              <p class="value-card__text">
+                Atuamos com integridade e respeito aos princípios éticos da advocacia em cada caso.
+              </p>
+            </li>
+
+            <li class="value-card" data-reveal data-reveal-delay="1">
+              <div class="value-card__icon" aria-hidden="true">
+                <i class="fas fa-star"></i>
+              </div>
+              <h3 class="value-card__title">Excelência</h3>
+              <p class="value-card__text">
+                Buscamos constantemente a melhor solução jurídica para cada cliente e situação.
+              </p>
+            </li>
+
+            <li class="value-card" data-reveal data-reveal-delay="2">
+              <div class="value-card__icon" aria-hidden="true">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3 class="value-card__title">Compromisso</h3>
+              <p class="value-card__text">
+                Dedicação total aos interesses e objetivos dos nossos clientes em todas as etapas.
+              </p>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================
+         NOSSA EQUIPE
+    =================== -->
+    <section class="team-section" id="equipe" aria-labelledby="team-heading">
+
+      <!-- Cabeçalho da seção centralizado -->
+      <header class="section-header team-section__header">
+        <p class="section-label" data-reveal>Nossa Equipe</p>
+        <h2 class="section-heading" id="team-heading" data-reveal data-reveal-delay="1">
+          Nossos <em>Advogados</em>
+        </h2>
+        <span class="section-rule" data-reveal data-reveal-delay="2" aria-hidden="true"></span>
+        <p class="team-section__description" data-reveal data-reveal-delay="3">
+          Conheça os profissionais que fazem do FerLopes uma referência em advocacia.
+        </p>
+      </header>
+
+      <!--
+        Cada card possui data-lawyer-id para o JS carregar o perfil correto no modal.
+        O atributo data-reveal aplica a animação de entrada via IntersectionObserver.
+      -->
+      <ul class="team-grid" role="list" aria-label="Lista de advogados">
+
+        <!-- Advogado 1 -->
+        <li class="lawyer-card" data-reveal data-lawyer-id="1">
+          <div class="lawyer-card__media">
+            <img
+              src="./assets/img/adv1.jpg"
+              alt="Dr. João Carlos Silva – Sócio Fundador"
+              loading="lazy"
+              width="400" height="500"
+            />
+            <div class="lawyer-card__overlay" aria-hidden="true">
+              <button class="lawyer-card__cta" aria-label="Ver perfil de Dr. João Carlos Silva">
+                <i class="fas fa-user" aria-hidden="true"></i> Ver Perfil
+              </button>
+            </div>
+          </div>
+          <div class="lawyer-card__info">
+            <h3 class="lawyer-card__name">Dr. João Carlos Silva</h3>
+            <p class="lawyer-card__role">Sócio Fundador</p>
+          </div>
+        </li>
+
+        <!-- Advogado 2 -->
+        <li class="lawyer-card" data-reveal data-reveal-delay="1" data-lawyer-id="2">
+          <div class="lawyer-card__media">
+            <img
+              src="./assets/img/adv2.jpg"
+              alt="Dra. Maria Fernanda Costa – Sócia Sênior"
+              loading="lazy"
+              width="400" height="500"
+            />
+            <div class="lawyer-card__overlay" aria-hidden="true">
+              <button class="lawyer-card__cta" aria-label="Ver perfil de Dra. Maria Fernanda Costa">
+                <i class="fas fa-user" aria-hidden="true"></i> Ver Perfil
+              </button>
+            </div>
+          </div>
+          <div class="lawyer-card__info">
+            <h3 class="lawyer-card__name">Dra. Maria Fernanda Costa</h3>
+            <p class="lawyer-card__role">Sócia Sênior</p>
+          </div>
+        </li>
+
+        <!-- Advogado 3 -->
+        <li class="lawyer-card" data-reveal data-reveal-delay="2" data-lawyer-id="3">
+          <div class="lawyer-card__media">
+            <img
+              src="./assets/img/adv3.jpg"
+              alt="Dr. Ricardo Almeida – Advogado Associado"
+              loading="lazy"
+              width="400" height="500"
+            />
+            <div class="lawyer-card__overlay" aria-hidden="true">
+              <button class="lawyer-card__cta" aria-label="Ver perfil de Dr. Ricardo Almeida">
+                <i class="fas fa-user" aria-hidden="true"></i> Ver Perfil
+              </button>
+            </div>
+          </div>
+          <div class="lawyer-card__info">
+            <h3 class="lawyer-card__name">Dr. Ricardo Almeida</h3>
+            <p class="lawyer-card__role">Advogado Associado</p>
+          </div>
+        </li>
+
+        <!-- Advogado 4 -->
+        <li class="lawyer-card" data-reveal data-reveal-delay="1" data-lawyer-id="4">
+          <div class="lawyer-card__media">
+            <img
+              src="./assets/img/adv4.jpg"
+              alt="Dra. Ana Paula Santos – Advogada Associada"
+              loading="lazy"
+              width="400" height="500"
+            />
+            <div class="lawyer-card__overlay" aria-hidden="true">
+              <button class="lawyer-card__cta" aria-label="Ver perfil de Dra. Ana Paula Santos">
+                <i class="fas fa-user" aria-hidden="true"></i> Ver Perfil
+              </button>
+            </div>
+          </div>
+          <div class="lawyer-card__info">
+            <h3 class="lawyer-card__name">Dra. Ana Paula Santos</h3>
+            <p class="lawyer-card__role">Advogada Associada</p>
+          </div>
+        </li>
+
+        <!-- Advogado 5 -->
+        <li class="lawyer-card" data-reveal data-reveal-delay="2" data-lawyer-id="5">
+          <div class="lawyer-card__media">
+            <img
+              src="./assets/img/adv5.jpg"
+              alt="Dr. Carlos Eduardo Martins – Advogado Associado"
+              loading="lazy"
+              width="400" height="500"
+            />
+            <div class="lawyer-card__overlay" aria-hidden="true">
+              <button class="lawyer-card__cta" aria-label="Ver perfil de Dr. Carlos Eduardo Martins">
+                <i class="fas fa-user" aria-hidden="true"></i> Ver Perfil
+              </button>
+            </div>
+          </div>
+          <div class="lawyer-card__info">
+            <h3 class="lawyer-card__name">Dr. Carlos Eduardo Martins</h3>
+            <p class="lawyer-card__role">Advogado Associado</p>
+          </div>
+        </li>
+
+        <!-- Advogado 6 -->
+        <li class="lawyer-card" data-reveal data-reveal-delay="3" data-lawyer-id="6">
+          <div class="lawyer-card__media">
+            <img
+              src="./assets/img/adv6.jpg"
+              alt="Dra. Fernanda Lima – Advogada Associada"
+              loading="lazy"
+              width="400" height="500"
+            />
+            <div class="lawyer-card__overlay" aria-hidden="true">
+              <button class="lawyer-card__cta" aria-label="Ver perfil de Dra. Fernanda Lima">
+                <i class="fas fa-user" aria-hidden="true"></i> Ver Perfil
+              </button>
+            </div>
+          </div>
+          <div class="lawyer-card__info">
+            <h3 class="lawyer-card__name">Dra. Fernanda Lima</h3>
+            <p class="lawyer-card__role">Advogada Associada</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- =====================================================
+       MODAL — PERFIL DO ADVOGADO
+       Usa <dialog> nativo do HTML5 para acessibilidade.
+       O JS injeta o conteúdo dinâmico em #modal-body.
+  ====================================================== -->
+  <dialog
+    class="lawyer-modal"
+    id="lawyer-modal"
+    aria-modal="true"
+    aria-labelledby="modal-lawyer-name"
+  >
+    <!-- Backdrop clicável para fechar -->
+    <div class="lawyer-modal__backdrop" id="modal-backdrop"></div>
+
+    <div class="lawyer-modal__panel" role="document">
+      <button
+        class="lawyer-modal__close"
+        id="modal-close-btn"
+        aria-label="Fechar perfil do advogado"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+
+      <!-- Conteúdo dinâmico inserido via JavaScript -->
+      <div class="lawyer-modal__body" id="modal-body"></div>
+    </div>
+  </dialog>
+
+
+  <!-- =====================================================
+       FOOTER
+       Estrutura IDÊNTICA ao index.html
+  ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+
+    <div class="site-footer__top">
+
+      <div class="footer-about">
+        <a href="./index.html" class="footer-about__logo" aria-label="FerLopes — Página Inicial">
+          <i class="fas fa-balance-scale" aria-hidden="true"></i>
+          FerLopes
+        </a>
+        <p class="footer-about__tagline">
+          Combinamos experiência e inovação para oferecer o suporte jurídico que você precisa.
+          Atuamos com firmeza e estratégia, sempre focados em proteger seus direitos.
+        </p>
+        <ul class="social-list" aria-label="Redes sociais">
+          <li>
+            <a href="#" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-posts">
+        <h3 class="footer-posts__title">Publicações Recentes</h3>
+
+        <article class="post-item">
+          <a href="#">
+            <img src="./assets/img/post-1.jpg" alt="Revisão Judicial de Novas Leis em Direito Trabalhista" class="post-item__thumb" loading="lazy" width="64" height="64" />
+          </a>
+          <div>
+            <a href="#"><p class="post-item__title">Revisão Judicial de Novas Leis em Direito Trabalhista</p></a>
+            <div class="post-item__meta">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <time datetime="2024-12-01">01 de Dezembro de 2025</time>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-item">
+          <a href="#">
+            <img src="./assets/img/post-2.jpg" alt="Fale Diretamente com a Seguradora em Caso de Acidentes" class="post-item__thumb" loading="lazy" width="64" height="64" />
+          </a>
+          <div>
+            <a href="#"><p class="post-item__title">Fale Diretamente com a Seguradora em Caso de Acidentes</p></a>
+            <div class="post-item__meta">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <time datetime="2024-11-15">15 de Novembro de 2025</time>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-item">
+          <a href="#">
+            <img src="./assets/img/post-3.jpg" alt="Ouça seus Advogados para os melhores conselhos" class="post-item__thumb" loading="lazy" width="64" height="64" />
+          </a>
+          <div>
+            <a href="#"><p class="post-item__title">Ouça seus Advogados: Eles lhe darão os melhores conselhos</p></a>
+            <div class="post-item__meta">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <time datetime="2024-11-05">05 de Novembro de 2025</time>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div><!-- /site-footer__top -->
+
+    <div class="site-footer__bottom">
+      <div class="footer-bottom-inner">
+        <p class="footer-copyright">
+          &copy; <time id="footer-year"></time> FerLopes Advocacia. Todos os direitos reservados.
+        </p>
+        <p class="footer-copyright">
+          OAB/SP &middot; Direito com Excelência e Integridade
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       SCROLL TO TOP
+  ====================================================== -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Voltar ao topo da página">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ===== JAVASCRIPT ÚNICO PARA TODAS AS PÁGINAS ===== -->
+  <script src="./assets/js/main.js" defer></script>
+
+</body>
+</html>
