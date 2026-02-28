@@ -2,6 +2,8 @@
 
 > Site institucional do escritório **FerLopes Advocacia**, construído com HTML5 semântico, CSS3 moderno e JavaScript puro (ES6+). Sem frameworks, sem dependências de build — apenas código limpo, organizado e de alta performance.
 
+![imagens ai galelia](https://raw.githubusercontent.com/Ivanctga/ferlopesadvocacia/refs/heads/main/Preview.png)
+
 ---
 
 ## Índice
